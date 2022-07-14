@@ -1,0 +1,36 @@
+@use './scss/' as *;
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;400;500;600;800&family=Open+Sans:wght@300;400&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+html{
+  font-size:14px;
+  line-height: 1.5;
+}
+body{
+  font-family: 'Open Sans' sans-serif;
+}
+.container{
+  max-width: 1100px;
+  margin:auto;
+  height: 100%;
+}
+ul{
+  list-style-type: none;
+}
+a{
+  text-decoration: none;
+  color:unset;
+}
+img{
+  width: 100%;
+}
+input,button{
+  outline:none;
+}
+.main{
+  margin-top: calc($header-heigth + 20px);
+}

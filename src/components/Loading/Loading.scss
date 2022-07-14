@@ -1,0 +1,11 @@
+@use './../../scss/' as *;
+
+.loading {
+    height: 100vh;
+    @include flex(center,center);
+    div{
+        margin:auto;
+    }
+    
+    
+}

@@ -1,0 +1,66 @@
+@use './../../../scss/' as *;
+
+.product__contain__item{
+    max-width: 19%;
+    padding : 20px 10px;
+    min-height: 100%;
+    border:1px solid rgb(216, 211, 211);
+    @include flex(center,space-between);
+    flex-direction: column;
+    transition:all 0.5s ease;
+    overflow: hidden;
+    &:hover{
+        box-shadow: $shadow;
+    }
+    &:hover img{
+        transform: scale(1.1);
+    }
+    .product-img{
+        img{
+            transition:all 0.5s ease;
+            width: 70%;
+        }
+        text-align: center;
+        position:relative;
+        margin-bottom: 10px;
+        
+        .sale{
+            position:absolute;
+            top:-15px;
+            right:0;
+            padding: 8px 7px;
+            background-color: $red;
+            border-radius: 50%;
+            color:$white;
+            font-weight: 700;
+        }
+    }
+    h3{
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .price{
+        margin-bottom: 1rem;
+        @include flex(center,space-between);
+        // gap: 5px;
+        span:first-child{
+            color:$red;
+            font-weight: 700;
+            font-size:1.2rem;
+        }
+        del{
+            font-weight: 400;
+            color:grey;
+            font-size: 1.2rem;
+        }
+    }
+    button{
+        width: 100%;
+        padding: 8px 0;
+        border:0;
+        border-radius: 5px;
+        background-color: $red;
+        color:$white;
+        cursor: pointer;
+    }
+}

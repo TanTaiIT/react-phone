@@ -1,0 +1,51 @@
+@use './../../scss/' as *;
+.hero{
+    margin-top:calc($header-heigth + 20px);
+    .hero__contain{
+        @include flex(unset,space-between);
+        gap:20px;
+        &__left{
+            width: 70%;
+        }
+        &__right{
+            width: 30%;
+        }
+        .hero__contain__left{
+           
+            &__top{
+                &:hover .slide-control .slide-control__prev, &:hover .slide-control .slide-control__next{
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                position:relative;
+                .slide-control{
+                    position:absolute;
+                    width: 100%;
+                    top:50%;
+                    transform: translateY(-50%);
+                    @include flex(center,space-between);
+                    .slide-control__prev, .slide-control__next{
+                        padding : 8px 10px;
+                        background:#9d919187;
+                        @include flex(center,center);
+                        border-radius: 50%;
+                        transition: transform 0.3s ease, opacity 0.3s ease;
+                        cursor: pointer;
+                    }
+                    .slide-control__prev{
+                        transform:translateX(-50px);
+                        opacity: 0;
+                    }
+                    .slide-control__next{
+                        transform:translateX(50px);
+                        opacity: 0;
+                    }
+                    svg{
+                        font-size: 2rem;
+                    }
+                }
+            }
+
+        }
+    }
+}

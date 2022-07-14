@@ -1,0 +1,57 @@
+@use './../../scss/' as *;
+.order{
+    margin-top: 3rem;   
+    &__contain{
+        width: 50%;
+        margin:auto;
+        background-color: rgba(237, 236, 236, 0.918);
+        padding: 20px;
+        form{
+            h3{
+                font-size:1rem;
+                text-transform: uppercase;  
+                font-weight: 500;
+                margin-bottom: 0.7rem;
+            }
+            .form-group{
+                @include flex(center,space-between);
+                margin-bottom: 1rem;
+                gap: 20px;
+                input{
+                    width: 50%;
+                    border:none;
+                    outline:none;
+                    padding: 13px 15px;
+                }
+                select{
+                    width: 50%;
+                    padding: 11px 15px;
+                    outline:none;
+                    border:none;
+                }
+                button{
+                    width: 50%;
+                    padding: 12px 15px;
+                    background-color: $white;
+                    border:none;
+                    &.active{
+                        border: 1px solid $red;
+                        color:$red;
+                    }
+                }
+            }
+            .paymentFull{
+                button{
+                    width: 100%;
+                    border:none;
+                    outline:none;
+                    padding: 12px 15px;
+                    background-color: $red;
+                    color:$white;
+                    text-transform: capitalize;
+                    font-size:1.1rem;
+                }
+            }
+        }
+    }
+}

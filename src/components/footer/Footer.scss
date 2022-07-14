@@ -1,0 +1,29 @@
+@use './../../scss/' as *;
+footer{
+    margin-top:$header-heigth;
+    .footer__contain{
+        @include flex(unset,space-between);
+        &__item{
+            h2{
+                margin-bottom: 1rem;
+            }
+            ul{
+                li{
+                    color:$red;
+                    font-weight: 600;
+                }
+                li:not(:last-child){
+                    margin-bottom: 1rem;
+                    
+                }
+            }
+            p{
+                font-weight: 600;
+                color:$red;
+            }
+            p:not(:last-child){
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
