@@ -4,10 +4,14 @@ import axios from 'axios'
 import ProductItem from './component/ProductItem'
 import { percentSale } from '../../utils/untils'
 import Loading from '../Loading/Loading'
+import { useDispatch, useSelector } from 'react-redux'
 const ListProduct = (props) => {
     const [product,setProudct] = useState([])
     const [loading,setLoading] = useState(true)
     const name = props.title
+    const dispatch = useDispatch()
+    
+    
     useEffect(()=>{
         const fetPro = async()=>{
             const response = await axios(`/products/${name}`)
@@ -17,7 +21,7 @@ const ListProduct = (props) => {
         }
         fetPro()
        
-    },[name])
+    },[name,dispatch])
   return (
        <div className="product">
             <div className="container">

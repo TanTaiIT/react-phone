@@ -21,7 +21,7 @@ export const CartItem = (props) => {
         </div>
         <div className="cartInfo">
             <p>{cart.name}</p>
-            <span>{FormatMoney(cart.price)} d</span>
+            <span>{FormatMoney(cart.price)} đ</span>
         </div>
         <div className="cartAction">
             <div className="Action">
@@ -30,7 +30,7 @@ export const CartItem = (props) => {
                 <span className="plus" onClick={()=>handleAdd(cart)}> + </span>
             </div>
             
-            <p onClick={()=>delCartHandle(cart._id)}>Xoa khoi gio hang</p>
+            <p onClick={()=>delCartHandle(cart._id)}>Xóa khỏi giỏ hàng</p>
         </div>
     </div>
   )

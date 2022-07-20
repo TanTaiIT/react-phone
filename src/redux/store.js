@@ -1,8 +1,12 @@
 import {createStore,combineReducers,applyMiddleware,compose} from 'redux'
 import thunk from 'redux-thunk'
 import {composeWithDevTools} from 'redux-devtools-extension'
-import { AddToCard } from './reducer/ProductReducer'
-import { UserReducer } from './reducer/UserReducer'
+import { AddToCard } from './reducer/CartReducers'
+import { getAllUserReducer, UserReducer, UserSignupReducer } from './reducer/UserReducer'
+import { Address } from './reducer/AddressReducer'
+import { getAllOrderReducer, OrderInfo, OrderOfUser } from './reducer/OrderReducer'
+import { AllProduct, AllProductReducer, SearchProduct } from './reducer/ProductReducer'
+import { ListTypeProductReducer, TypeProductReducer } from './reducer/ListTypeProductReducer'
 const CartItem = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : []
 const User = localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')) : null
 const initialState = {
@@ -14,8 +18,19 @@ const initialState = {
     }
 }
 const reducer = combineReducers({
+    searchProduct:SearchProduct,
+    allProduct: AllProduct,
     cartReducer : AddToCard,
-    user : UserReducer
+    userRegister:UserSignupReducer,
+    user : UserReducer,
+    order:Address,
+    orderReducer : OrderInfo,
+    getAllOrder : getAllOrderReducer,
+    getOrderOfUser: OrderOfUser,
+    getAllProduct: AllProductReducer ,
+    allTypeProduct: ListTypeProductReducer,
+    detailType: TypeProductReducer,
+    UserReducer: getAllUserReducer
 })
 
 const middleware = [thunk] 

@@ -20,7 +20,7 @@ const ProductItem = (props) => {
    const handleCart = (pro)=>{
     dispatch(addToCart(pro))
     if (!toast.isActive(ToastId.current)) {
-      ToastId.current = toast.success("da them san pham vao gio hang", ToastOject)
+      ToastId.current = toast.success("Đã thêm sản phẩm vào giở hàng", ToastOject)
     }
    }
     const item = props.pro
@@ -28,7 +28,7 @@ const ProductItem = (props) => {
     <>
     <Toast/>
     <div className="product__contain__item">
-      <Link to={`/${item._id}`}>
+      <Link to={`/detail/${item._id}`}>
         <div className="product-img">
             <img src={item.image} alt="name"/>
             <span className="sale">{item.percentDiscount}%</span>
@@ -36,7 +36,7 @@ const ProductItem = (props) => {
         </Link>
         <h3>{item.name}</h3>
         <div className="price">
-            <span>{FormatMoney(item.price)}d</span><del>{item.salePrice} d</del>
+            <span>{FormatMoney(item.price)}đ</span><del>{item.salePrice} đ</del>
         </div>
         <button className="btn buy" onClick={()=>handleCart(item)}>Mua ngay</button>
     </div>

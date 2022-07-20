@@ -17,8 +17,8 @@ const ShopCart = () => {
         <div className="container">
             <div className="cart_contain">
                 <div className="cart_contain__head">
-                    <Link to='/'>Tiep tuc mua hang</Link>
-                    <h2>Gio hang</h2>
+                    <Link to='/'>Tiếp tục mua hàng</Link>
+                    <h2>Giỏ hàng</h2>
                 </div>
                 <div className="cart_contain__body">
                     {
@@ -30,9 +30,9 @@ const ShopCart = () => {
                     }
                 </div>
                 <div className="cart_contain__footer">
-                    <div className="flex"><span>Tong tien</span> <span className="total">{FormatMoney(total)} d</span></div>
+                    <div className="flex"><span>Tổng tiền</span> <span className="total">{FormatMoney(total)} đ</span></div>
                     <div className="order">
-                        <button type="button" onClick={orderhandle} className="btn btn-sell">Dat hang</button>
+                        <button type="button" onClick={orderhandle} className="btn btn-sell">Đặt hàng</button>
                     </div>
                 </div>
                 

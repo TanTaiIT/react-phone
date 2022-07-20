@@ -1,11 +1,12 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React, { useEffect } from 'react'
+import {Link, useNavigate} from 'react-router-dom'
 import './Login.scss'
 import {useForm} from 'react-hook-form'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Login } from '../../redux/action/UserAction'
 const LoginPage = () => {
   const dispatch = useDispatch()
+  const user = useSelector(state=>state.user.userInfo)
   const {
     register,
     handleSubmit,
@@ -15,6 +16,12 @@ const LoginPage = () => {
   const onSubmit = (data)=>{
     dispatch(Login(data))
   }
+  const navigate = useNavigate()
+  useEffect(()=>{
+    if(user){
+      navigate('/')
+    }
+  })
   return (
     <div className="main">
         <div className="login-form">

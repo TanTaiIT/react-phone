@@ -1,0 +1,10 @@
+@use './../../scss/' as *;
+
+
+.product__contain1{
+    margin-top:calc($header-heigth + 20px);
+    .product__contain__cover{
+        @include flex(center,flex-start);
+        gap:10px;
+    }
+}

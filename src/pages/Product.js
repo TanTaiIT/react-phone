@@ -5,29 +5,36 @@ import { percentSale } from '../utils/untils'
 import Header from '../components/header/Header'
 import Footer from '../components/footer/Footer'
 import Loading from '../components/Loading/Loading'
-
+import ProductFilter from '../components/ProductList/ProductFilter'
+import { useDispatch, useSelector } from 'react-redux'
+import { getAllProduct } from '../redux/action/ProductAction'
 
 const Product = () => {
   const [product,setProduct] = useState([])
   const [loading,setLoading] = useState(true)
+  const pro = useSelector(state=>state.allProduct.product)
+  const dispatch = useDispatch()
   useEffect(()=>{
     const getProduct = async() =>{
-      const response = await axios.get('/products')
-      setProduct(response.data)
+      dispatch(getAllProduct())
+      // const response = await axios.get('/products')
+      // setProduct(response.data)
       setLoading(false)
     }
     getProduct()
     
-  },[])
+  },[dispatch])
   return (
     <>
     <Header/>
     <div className="main">
         <div className="product_list">
+        
           {
             loading ? <Loading/> : (<><div className="container">
+              <ProductFilter/>
             {
-              product && <ProductList productSale={percentSale(product)}/>
+              pro && <ProductList productSale={percentSale(pro)}/>
             }
           </div></>) 
           }
