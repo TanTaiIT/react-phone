@@ -7,8 +7,14 @@ export const AllProductReducer = (state={},action)=>{
         case "REVIEW_PRODUCT" :{
             return {...state,product:action.payload}
         }
-        case "GET_PRODUCT_ID":{
+        case "GET_PRODUCT_BY_ID":{
             return {...state,product:action.payload}
+        }
+        case 'REMOVE_PRODUCT_BY_ID':{
+            return {}
+        }
+        case 'DELETE_PRODUCT':{
+            return {...state, product: action.payload}
         }
         default:
             return state
@@ -53,6 +59,9 @@ export const AllProduct = (state=initialState,action)=>{
                 state,product:newList
             }
 
+        }
+        case 'EDIT_CURRENT_PAGE':{
+            return {...state, currentPage: action.payload}
         }
         case 'PAGINATION_PRODUCT':
             console.log(action.payload)

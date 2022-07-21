@@ -13,7 +13,7 @@ function AdminUpdate(props) {
   const history = useNavigate();
 
   const [image, setImage] = useState("");
-  const detailProduct = useSelector((state) => state.getProductById.product);
+  const detailProduct = useSelector((state) => state.getAllProduct.product);
   const SelectList = useSelector((state) => state.selectList.List);
   const [activeTypeProduct, setActiveTypeproduct] = useState(undefined);
   const { List } = useSelector((state) => state.allTypeProduct);
@@ -28,11 +28,11 @@ function AdminUpdate(props) {
 
   useEffect(() => {
     dispatch(getAllSelectList());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(getAllSelectList());
-  }, []);
+  }, [dispatch]);
 
   const handleFileImageChange = (e) => {
     setImage(e.target.files[0]);
@@ -62,7 +62,7 @@ function AdminUpdate(props) {
     formData.append("screen", data.screen);
 
     await dispatch(saveProduct(formData));
-    history.push("/admin/product");
+    history("/admin/product");
   };
 
   const MenuFirmProduct = (item) => (

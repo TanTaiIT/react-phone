@@ -23,7 +23,7 @@ const ProductFilter = () => {
   
   return (
     <div className="sort">
-      <select onChange={handleChange}>
+      <select onChange={handleChange} className="select-sort">
         <option disabled selected={true}>_____Sắp xếp theo giá_____</option>
         <option value="increase">Tăng dần</option>
         <option value="decrease">giảm dần</option>

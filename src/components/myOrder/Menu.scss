@@ -2,8 +2,15 @@
 
 .menu{
     @include flex(center,unset);
+    @include mobile{
+        @include flex(center,center);
+    }
+    flex-wrap: wrap;
     gap:20px;
     &_contain{
+        @include mobile{
+            min-width: 45%;
+        }
         position:relative;
         .menu__item{
             padding: 3px 20px;

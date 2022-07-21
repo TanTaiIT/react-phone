@@ -7,6 +7,7 @@ import { Address } from './reducer/AddressReducer'
 import { getAllOrderReducer, OrderInfo, OrderOfUser } from './reducer/OrderReducer'
 import { AllProduct, AllProductReducer, SearchProduct } from './reducer/ProductReducer'
 import { ListTypeProductReducer, TypeProductReducer } from './reducer/ListTypeProductReducer'
+import { SelectListReducer } from './reducer/SelectListReducer'
 const CartItem = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : []
 const User = localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')) : null
 const initialState = {
@@ -30,7 +31,8 @@ const reducer = combineReducers({
     getAllProduct: AllProductReducer ,
     allTypeProduct: ListTypeProductReducer,
     detailType: TypeProductReducer,
-    UserReducer: getAllUserReducer
+    UserReducer: getAllUserReducer,
+    selectList: SelectListReducer,
 })
 
 const middleware = [thunk] 

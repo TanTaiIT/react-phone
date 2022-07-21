@@ -15,7 +15,7 @@ import {
 function Sidebar(props) {
   const dispatch = useDispatch();
   const location = useLocation()
-  const { orderPendding } = useSelector((state) => state.getAllOrder);
+  const { orderPendding } = useSelector((state) => state.orderReducer);
   let totalNewOrder
   
   if(orderPendding){
@@ -66,12 +66,12 @@ function Sidebar(props) {
               </div>
           
         </Link>
-        <Link to="/admin/chat" className={location.pathname === '/admin/chat' ? 'sidebar-list-item active': 'sidebar-list-item'}>
+        {/* <Link to="/admin/chat" className={location.pathname === '/admin/chat' ? 'sidebar-list-item active': 'sidebar-list-item'}>
           <span>
             <WechatOutlined></WechatOutlined>
           </span>
           <p>Chat</p>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

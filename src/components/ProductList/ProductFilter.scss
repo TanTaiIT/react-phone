@@ -1,9 +1,10 @@
 @use './../../scss/' as *;
 .sort{
     margin:20px 0;
-    select{
+    .select-sort{
         padding: 5px 0;
         outline:none;
         text-align: center;
+        width: unset;
     }
 }

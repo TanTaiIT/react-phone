@@ -13,7 +13,7 @@ const Search = () => {
   return (
     <>
         <Header/>
-        {searchPro && searchPro.length > 0 ?  <SearchProduct productSale={percentSale(searchPro)}/> : <div className="error container"><span style={{display:"block",marginTop:"100px",color:"#d70018",fontSize:"1.3rem"}}>Khong tim thay san pham</span>
+        {searchPro && searchPro.length > 0 ?  <SearchProduct productSale={percentSale(searchPro)}/> : <div className="error container"><span style={{display:"block",marginTop:"100px",color:"#d70018",fontSize:"1.3rem"}}>Không tìm thấy sản phẩm</span>
             </div>}
     </>
   )

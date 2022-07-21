@@ -31,7 +31,7 @@ const AllOrder = () => {
 
 export const OrderItem = (props)=>{
     return (
-        <div className="order-list">
+        <div className="order-list-l">
         <div className="container">
             <div className="order-list__contain">
                 {

@@ -8,6 +8,7 @@ import {
   FileTextOutlined,
 } from "@ant-design/icons";
 import "./DashBoard.css";
+import AdminImg from './download.png'
 import ChartDashBoard from "./ChartDashBoard";
 
 export default function DashBoard() {
@@ -25,8 +26,8 @@ export default function DashBoard() {
           </div>
           <div className="dashboard-top-content">
             <li className="dashboard-top-content-avatar">
-              <img src="https://res.cloudinary.com/caokhahieu/image/upload/v1626334932/gediogbkwlg85kbbsamq.jpg"></img>
-              <span>Cao Kha Hieu</span>
+            <img src={AdminImg} alt="" />
+              <span>Admin</span>
             </li>
             <li className="dashboard-top-content-bell">
               <BellOutlined></BellOutlined>

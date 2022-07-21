@@ -2,6 +2,10 @@
 .order{
     margin-top: 3rem;   
     &__contain{
+        @include mobile{
+            width: 100%;
+            padding :50px 20px;
+        }
         width: 50%;
         margin:auto;
         background-color: rgba(237, 236, 236, 0.918);
@@ -22,6 +26,7 @@
                     position:relative;
                     width: 50%;
                     button{
+                        color:$black!important;
                         width: 100%;
                         &:hover{
                             background-color: rgb(172, 172, 172);
@@ -94,6 +99,7 @@
                     padding: 13px 15px;
                 }
                 button{
+                    color:$black!important;
                     width: 50%;
                     padding: 12px 15px;
                     background-color: $white;
@@ -107,6 +113,7 @@
             }
             .paymentFull{
                 button{
+                    
                     width: 100%;
                     border:none;
                     outline:none;

@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useRef} from 'react'
 import './Header.scss'
 import {Link, useNavigate} from 'react-router-dom'
 import {BsSearch} from 'react-icons/bs'
@@ -6,6 +6,8 @@ import {AiOutlineArrowDown} from 'react-icons/ai'
 import {AiOutlineShoppingCart} from 'react-icons/ai'
 import { useDispatch, useSelector } from 'react-redux'
 import { searchProduct } from '../../redux/action/ProductAction'
+import {AiOutlineBars} from 'react-icons/ai'
+import {AiOutlineCloseSquare} from 'react-icons/ai'
 const Header = () => {
     const state = useSelector(state=> state.cartReducer)
     const userState = useSelector(state => state.user)
@@ -24,6 +26,16 @@ const Header = () => {
         dispatch(searchProduct(search))
         navigate('/search')
     }
+    const linkRef = useRef(null)
+    const cartRef = useRef(null)
+    const handleRef = () =>{
+        linkRef.current.classList.add('active')
+        cartRef.current.classList.add('active')
+    }
+    const handleClose = ()=>{
+        linkRef.current.classList.remove('active')
+        cartRef.current.classList.remove('active')
+    }
     
   return (
     <div className="header">
@@ -37,7 +49,8 @@ const Header = () => {
                         <input type="text" placeholder='Tìm kiếm' onChange={((e)=>setSearch(e.target.value))} /> 
                         <BsSearch/>
                     </form>
-                    <ul className="header__contain__right__link">
+                    <ul className="header__contain__right__link" ref={linkRef}>
+                        <AiOutlineCloseSquare onClick={handleClose} className="close"/>
                         <li className="header__contain__right__link-item">
                             <Link to='/'>Trang chủ</Link>
                         </li>
@@ -49,7 +62,10 @@ const Header = () => {
                             <Link to='/login'>{userInfo.name}<AiOutlineArrowDown/></Link>
                             <div className="dropdown">
                                 <ul>
-                                    <li><Link to='/admin'>Admin</Link></li>
+                                    {
+                                        userInfo.isAdmin ? <li><Link to='/admin'>Admin</Link></li> : ''
+                                    }
+                                    
                                     <li><Link to='/myorder'>Đơn hàng</Link></li>
                                     <li><Link to='' onClick={logoutUser}>Đăng xuất</Link></li>
                                 </ul>
@@ -66,7 +82,10 @@ const Header = () => {
                         }
                         
                     </ul>
-                    <div className="header__contain__right__cart">
+
+
+                    
+                    <div className="header__contain__right__cart" ref={cartRef}>
                         <div className="cart__contain">
                             <Link to='/cart'>
                                 <AiOutlineShoppingCart/>
@@ -75,7 +94,13 @@ const Header = () => {
                             
                         </div>
                     </div>
+
+                   
                     
+                </div>
+
+                <div className="header__contain__right__first">
+                    <AiOutlineBars onClick={handleRef}/>
                 </div>
                
             </div>

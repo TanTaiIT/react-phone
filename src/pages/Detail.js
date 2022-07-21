@@ -6,6 +6,7 @@ import Footer from '../components/footer/Footer'
 import Loading from '../components/Loading/Loading'
 import { getProductDetail } from '../redux/action/ProductAction'
 import { useDispatch, useSelector } from 'react-redux'
+import { removeProductById } from '../redux/action/ProductAction'
 const Detail = () => {
     window.scrollTo(0,0)
     const {id} = useParams()
@@ -19,12 +20,16 @@ const Detail = () => {
             setLoading(false)
         }
         getDetail()
+        return()=>{
+            dispatch(removeProductById())
+        }
     },[id,dispatch])
     
   return (
    <>
    
    <Header/>
+
    {
     loading ? <Loading/> : (<>{product ? <Details detail={product}/> : "" }</>)
    }

@@ -40,7 +40,7 @@ export const reviewProduct = (id,review)=> async(dispatch,getState)=>{
 export const getProductDetail = (id)=>async(dispatch)=>{
     try {
         const {data} =  await axios.get(`/products/detail/${id}`)
-        dispatch({type:"GET_PRODUCT_ID",payload:data})
+        dispatch({type:"GET_PRODUCT_BY_ID",payload:data})
     } catch (error) {
         dispatch({type:"GET_PRODUCT_FAIL",payload:error})
     }
@@ -65,10 +65,9 @@ export const saveProduct = (product) => async (dispatch, getState) => {
   
     try {
       const {
-        userSignin: { userInfo },
+        user: { userInfo },
       } = getState();
       if (!product.get('_id')) {
-        console.log("create");
         const { data } = await axios.post(
           "http://localhost:5000/products/create",
           product,
@@ -112,6 +111,7 @@ export const saveProduct = (product) => async (dispatch, getState) => {
       console.log(error);
     }
   };
+  
 
 
   export const getproductById = (id) => async (dispatch) => {
@@ -133,7 +133,7 @@ export const saveProduct = (product) => async (dispatch, getState) => {
     console.log(productId)
     try {
       const {
-        userSignin: { userInfo },
+        user: { userInfo },
       } = getState();
       const { data } = await axios.delete(
         `http://localhost:5000/products/delete/${productId}`,
@@ -154,7 +154,7 @@ export const saveProduct = (product) => async (dispatch, getState) => {
   export const BlogProduct = (id, blog) => async (dispatch, getState) => {
     console.log(blog)
     const {
-      userSignin: { userInfo },
+      user: { userInfo },
     } = getState();
     try {
       const { data } = await axios.post(

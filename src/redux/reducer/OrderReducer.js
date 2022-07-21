@@ -8,6 +8,11 @@ export const OrderInfo = (state={},action)=>{
                 ...state,order:action.payload
             }
         }
+        case "GET_ALL_ORDER_PENDDING": {
+            return { ...state, orderPendding: action.payload };
+          }
+        
+
         default:
             return state
     }

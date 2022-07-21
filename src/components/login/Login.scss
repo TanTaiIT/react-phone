@@ -1,6 +1,9 @@
 @use './../../scss/' as *;
 .login-form{
     width: 50%;
+    @include mobile{
+        width: 100%;
+    }
     margin:auto;
     h2{
         text-align: center;

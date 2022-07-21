@@ -3,7 +3,17 @@ footer{
     margin-top:$header-heigth;
     .footer__contain{
         @include flex(unset,space-between);
+        @include mobile{
+            gap:10px;
+            padding:20px;
+        }
+        flex-wrap: wrap;
         &__item{
+            @include mobile{
+                width: 45%;
+                
+            
+            }
             h2{
                 margin-bottom: 1rem;
             }

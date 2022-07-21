@@ -4,6 +4,9 @@
     margin-top:20px;
 }
 .rate{
+    @include mobile{
+        width: 100%;
+    }
     width: 70%;
     border: 1px solid rgb(220, 220, 220);
     .rate-info{
@@ -11,6 +14,9 @@
         
         padding: 20px 10px;
         @include flex(center,space-around);
+        @include mobile{
+            gap:4px;
+        }
         &__left{
             h2{
                 font-weight: 400;
@@ -28,6 +34,9 @@
         }
         max-width: 700px;
         &__center{
+            @include mobile{
+                max-width: 150px;
+            }
             max-width: 320px;
             @include flex(unset,flex-start);
             flex-direction: column;
@@ -60,6 +69,10 @@
         }
         &__right{
             button{
+                @include mobile{
+                    padding: 3px 5px;
+                    border-radius:3px;
+                }
                 padding: 13px 15px;
                 background-color: rgb(236, 197, 1);
                 border:none;

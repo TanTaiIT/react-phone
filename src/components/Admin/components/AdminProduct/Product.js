@@ -24,7 +24,7 @@ function Product(props) {
     <tr>
       <td>{number + 1}</td>
       <td>
-        <img src={product.image}></img>
+        <img src={product.image} alt=""/>
       </td>
       <td>{product.name}</td>
       <td>{FormatMoney(product.salePrice)}</td>

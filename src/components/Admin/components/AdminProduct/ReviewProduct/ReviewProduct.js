@@ -2,10 +2,6 @@ import React, { useEffect, useRef } from "react";
 import "./ReviewProduct.css";
 import { useDispatch, useSelector } from "react-redux";
 import { Editor } from "@tinymce/tinymce-react";
-// import {
-//   BlogProduct,
-//   getproductById,
-// } from "../../../../../actions/ProductAction";
 import { BlogProduct,getProductDetail } from "../../../../../redux/action/ProductAction";
 import { useParams } from "react-router-dom";
 
@@ -13,9 +9,7 @@ export default function ReviewProduct() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const editorRef = useRef(null);
-
-  const detailProduct = useSelector((state) => state.getProductById.product);
-
+  const detailProduct = useSelector((state) => state.getAllProduct.product);
   const log = () => {
     if (editorRef.current) {
       const blogContent = String(editorRef.current.getContent());

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 // import { editCurrentPage, paginationProduct } from '../../../../actions/ProductAction';
 import { editCurrentPage,paginationProduct } from '../../../../redux/action/ProductAction';
 import Product from './Product';
+import "antd/dist/antd.min.css";
 import { Pagination } from 'antd';
 
 function ListProduct(props) {
@@ -32,7 +33,7 @@ function ListProduct(props) {
             </table>
             
             <div className="pagination">
-                <Pagination defaultCurrent={1} current={currentPage} total={pages*10} onChange={HandleChangePage}/>
+                <Pagination  defaultCurrent={1} current={currentPage} total={pages*10} onChange={HandleChangePage}/>
             </div>
 
        </div>
