@@ -20,17 +20,26 @@ body{
 }
 ul{
   list-style-type: none;
+  margin-bottom: 0!important;
 }
 a{
-  text-decoration: none;
-  color:unset;
+  text-decoration: none!important;
+  color:unset!important;
 }
 img{
   width: 100%;
 }
 input,button{
   outline:none;
+  // border:none;
+  color:$black!important;
 }
 .main{
   margin-top: calc($header-heigth + 20px);
+}
+p{
+  margin-bottom: 0!important;
+}
+button{
+  color:$white!important;
 }

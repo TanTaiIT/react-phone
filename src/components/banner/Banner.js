@@ -29,8 +29,8 @@ const Banner = () => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        nextArrow: <Next/>,
-        prevArrow: <Prev/>,
+        // nextArrow: <Next/>,
+        // prevArrow: <Prev/>,
       };
       
   return (
@@ -53,10 +53,10 @@ const Banner = () => {
                             <img src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/loa-691-301-max.png" alt=""></img>
                         </div>
                     </Slider>
-                    <div className="slide-control">
+                    {/* <div className="slide-control">
                         <Next/>
                         <Prev/>
-                    </div>
+                    </div> */}
                     </div>
                     <div className="hero__contain__left__bottom">
                         <div className="container">
@@ -93,13 +93,13 @@ const Banner = () => {
                 </div>
                 <div className="hero__contain__right">
                     <div className="hero__contain__right__item">
-                        <img src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/RB_S21.png" alt=""></img>
+                        <img src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/RB_S21.png" alt=""/>
                     </div>
                     <div className="hero__contain__right__item">
-                        <img src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/RB_S21.png" alt=""></img>
+                    <img src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/iPhone_12_690x300_copyssspng.png" alt=""/>
                     </div>
                     <div className="hero__contain__right__item">
-                        <img src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/RB_S21.png" alt=""></img>
+                    <img src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/11lite-690-300-max.png" alt=""/>
                     </div>
                 </div>
             </div>

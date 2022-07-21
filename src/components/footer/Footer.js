@@ -12,10 +12,10 @@ const Footer = () => {
           <div className="footer__contain__item">
             <h2>ABOUT</h2>
             <ul>
-              <li><Link to='/'>Ve chung toi</Link></li>
+              <li><Link to='/'>Về chúng tôi</Link></li>
               <li><Link to='/'>Blog</Link></li>
-              <li><Link to='/'>Co hoi nghe nghiep</Link></li>
-              <li><Link to='/'>Cua hang</Link></li>
+              <li><Link to='/'>Cơ hội nghề nghiệp</Link></li>
+              <li><Link to='/'>Cửa hàng</Link></li>
 
             </ul>
           </div>

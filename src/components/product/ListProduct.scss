@@ -2,6 +2,9 @@
 
 .product{
     h2{
+        @include mobile{
+            margin-top:50px;
+        }
         color:$red;
         font-weight: 700;
         margin-bottom: 1.5rem;
@@ -11,5 +14,6 @@
     &__contain{
         @include flex(unset,space-between);
         flex-wrap: wrap;
+        
     }
 }

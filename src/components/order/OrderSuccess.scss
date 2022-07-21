@@ -1,0 +1,47 @@
+@use './../../scss/' as *;
+
+.success{
+    height: 100vh;
+    @include flex(center,center);
+    .container{
+        width: 100%;
+        
+        .success_contain{
+            width: 50%;
+            margin:auto;
+            height: 100vh;
+            text-align: center;
+            @include flex(center,center);
+            flex-direction: column;
+            svg{
+                font-size:10rem;
+                color:green;
+            }
+            h2{
+                margin-top:1rem;
+                text-transform: uppercase;
+                margin-bottom: 1rem;
+                font-weight: 400;
+            }
+            .payment_btn{
+                @include flex(center,center);
+                gap:20px;
+                a{
+                    padding: 13px 0px;
+                    border:0.5px solid rgb(230, 228, 228);
+                    background-color: $white;
+                    border-radius:25px;
+                    width: 170px;
+                    min-width: 170px;
+                    &:hover{
+                        background-color: rgb(230, 228, 228);
+                    }
+                }
+            }
+            
+
+        }
+        
+    }
+    
+}

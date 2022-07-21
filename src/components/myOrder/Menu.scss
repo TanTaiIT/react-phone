@@ -1,0 +1,39 @@
+@use './../../scss/' as *;
+
+.menu{
+    @include flex(center,unset);
+    @include mobile{
+        @include flex(center,center);
+    }
+    flex-wrap: wrap;
+    gap:20px;
+    &_contain{
+        @include mobile{
+            min-width: 45%;
+        }
+        position:relative;
+        .menu__item{
+            padding: 3px 20px;
+            border:1px solid $red;
+            color:$red;
+            &.active{
+                background-color: $red;
+                color:$white;
+            }
+        }
+        span{
+            position:absolute;
+            top: -16px;
+            left: 82%;
+            background-color: $red;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            color:$white;
+            @include flex(center,center);
+            
+        }
+
+    }
+    
+}

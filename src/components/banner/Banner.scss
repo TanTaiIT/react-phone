@@ -3,11 +3,22 @@
     margin-top:calc($header-heigth + 20px);
     .hero__contain{
         @include flex(unset,space-between);
+        @include mobile{
+            @include flex(center,center);
+        }
         gap:20px;
         &__left{
             width: 70%;
+            @include mobile{
+                width: 100%;
+                padding: 0 10px;
+            }
         }
         &__right{
+            @include mobile{
+                display: none;
+
+            }
             width: 30%;
         }
         .hero__contain__left{
@@ -45,7 +56,16 @@
                     }
                 }
             }
+            &__bottom{
+                @include mobile{
+                    text-align: center;
+                }
+            }
 
+        }
+        
+        .hero__contain__right__item{
+            margin-bottom: 1rem;
         }
     }
 }

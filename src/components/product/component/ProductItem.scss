@@ -1,6 +1,9 @@
 @use './../../../scss/' as *;
 
 .product__contain__item{
+    @include mobile{    
+        min-width: 100%;
+    }
     max-width: 19%;
     padding : 20px 10px;
     min-height: 100%;
@@ -62,5 +65,8 @@
         background-color: $red;
         color:$white;
         cursor: pointer;
+        @include mobile{
+            width: 80%;
+        }
     }
 }
